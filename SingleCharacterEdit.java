@@ -1,5 +1,5 @@
 public class SingleCharacterEdit {
-	private boolean editMade;
+	private static boolean editMade;
 
     public static String singleCharacterEditWillTurnAIntoB(String a, String b) {
         if ( (Math.abs( a.length() - b.length() ) < 2) && (!a.equals(b)) ) {
@@ -14,19 +14,20 @@ public class SingleCharacterEdit {
         		else {
         			return insert(a, b);
         		}
+        	}
         }
         return null; // this is only here to make it compile
     }
 
-    private String replace(String a, String b) {
+    private static String replace(String a, String b) {
     	return null;
     }
 
-    private String remove(String a, String b) {
+    private static String remove(String a, String b) {
     	return null;
     }
 
-    private String insert(String a, String b) {
+    private static String insert(String a, String b) {
     	return null;
     }
 
