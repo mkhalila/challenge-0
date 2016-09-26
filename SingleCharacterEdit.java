@@ -20,6 +20,12 @@ public class SingleCharacterEdit {
     }
 
     private static String replace(String a, String b) {
+    	for (int i = 0; i < a.length(); i++) {
+    		if (a.charAt(i) != b.charAt(i)) {
+    			editMade = true;
+    			return "replace," + i + "," + b.charAt(i);
+    		}
+    	}
     	return null;
     }
 
