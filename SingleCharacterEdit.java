@@ -40,6 +40,16 @@ public class SingleCharacterEdit {
     }
 
     private static String insert(String a, String b) {
+        for (int i = 0; i < a.length(); i++) {
+            if (a.charAt(i) != b.charAt(i)) {
+                editMade = true;
+                return "insert," + i + "," + b.charAt(i);
+            } 
+        }
+        if (a.charAt(a.length()-1) != b.charAt(b.length()-1)) {
+            editMade = true;
+            return "insert," + a.length() + "," + b.charAt(b.length()-1);
+        }
     	return null;
     }
 
