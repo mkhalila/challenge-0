@@ -30,6 +30,10 @@ public class SingleCharacterEdit {
     }
 
     private static String remove(String a, String b) {
+        if (a.charAt(a.length()-1) != b.charAt(b.length()-1)) {
+            editMade = true;
+            return "remove," + (a.length()-1);
+        }
     	for (int i = 0; i < a.length(); i++) {
     		if (a.charAt(i) != b.charAt(i)) {
     			editMade = true;
