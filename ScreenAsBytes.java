@@ -1,14 +1,14 @@
 public class ScreenAsBytes {
 
     public static void setPixel(byte[] screen, int width, int x, int y) {
-        int bitsPerRow = width/8;
-        int jumpToBit = bitsPerRow*y;
+        int bytesPerRow = width/8;
+        int byteToChange = bytesPerRow*y;
         if (x > 7) {
-        	int xdiv8 = x/8;
-        	x -= 8 * xdiv8;
-        	jumpToBit += xdiv8;
+        	int byteIndexInRow = x/8;
+        	x -= 8 * byteIndexInRow;
+        	byteToChange += byteIndexInRow;
         }
-        screen[jumpToBit] |= (1 << 7-x);
+        screen[byteToChange] |= (1 << 7-x);
     }
 
     public static void drawHorizontalLine(byte[] screen, int width, int startX, int endX, int y) {
