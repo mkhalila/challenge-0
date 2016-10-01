@@ -18,7 +18,9 @@ public class ScreenAsBytes {
     }
     
     public static void drawVerticalLine(byte[] screen, int width, int x, int startY, int endY) {
-        // TODO complete this code
+        for (int i = startY; i < endY+1; i++) {
+        	setPixel(screen, width, x, i);
+        }
     }
 
 }
